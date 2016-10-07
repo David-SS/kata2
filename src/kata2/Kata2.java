@@ -7,15 +7,11 @@ public class Kata2 {
 
     public static void main(String[] args) {
         int[] data = {1,1,1,100,2,4,5,6,8,8,4,5,6,2,-4};
-        Map<Integer,Integer> histogram = new HashMap<>();
+        Histogram histo = new Histogram(data);
+        Map<Integer,Integer> histoThis = histo.getHistogram();
         
-        for (int i : data) {
-            //Pone su valor mas uno o bien, 1 (operadores ternarios= ?,:)
-            histogram.put(i,histogram.containsKey(i)?histogram.get(i)+1: 1);
-        }
-        
-        for (int key : histogram.keySet()) {
-            System.out.println(key + "-->" + histogram.get(key));
+        for (int key : histoThis.keySet()) {
+            System.out.println(key + "-->" + histoThis.get(key));
         }
     }
 }
